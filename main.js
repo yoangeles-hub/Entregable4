@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
         if (cartCount) cartCount.textContent = totalItems;
-        if (cartTotal) cartTotal.textContent = `$${totalPrice.toLocaleString()} COP`;
+        if (cartTotal) cartTotal.textContent = `$${totalPrice.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`;
 
         if (!cartItemsList) return;
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
                     <div>
                         <h4 class="font-bold text-dark-green text-xs">${item.title}</h4>
-                        <span class="text-[11px] text-gray-500">$${item.price.toLocaleString()} COP c/u</span>
+                        <span class="text-[11px] text-gray-500">$${item.price.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN c/u</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="text-xs font-bold text-primary-orange">x${item.qty}</span>
